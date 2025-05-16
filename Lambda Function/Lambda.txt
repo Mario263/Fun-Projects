@@ -1,3 +1,24 @@
 Lambda functions give you a concise way to write small, throwaway functions in your code.
 
 In this project, you'll explore the power of Lambda Functions by creating an expense tracker. Your resulting app will demonstrate how you can use Lambda Functions for efficient, streamlined operations.
+
+##########################################
+
+This Python program is a command-line based expense tracker. It allows users to add expenses, list all expenses, view the total amount spent, and filter expenses by category. It uses functions to modularize the logic and demonstrates the use of a lambda function in combination with built-in higher-order functions like map() and filter().
+	1.	add_expense(expenses, amount, category):
+This function takes in the current list of expenses, the amount spent, and the category. It adds a new expense to the list in the form of a dictionary with keys 'amount' and 'category'.
+	2.	print_expenses(expenses):
+This function iterates over the list of expenses and prints each expense’s amount and category using formatted strings. It expects the expenses input to be a list of dictionaries.
+	3.	total_expenses(expenses):
+This function calculates the total amount spent using the map() function and a lambda expression. The map() function applies the lambda to each item in the expenses list, extracting the 'amount' from each dictionary. These amounts are then passed to the sum() function to get the total. This use of lambda and map() is an example of functional programming, where a short anonymous function is used inline to transform data.
+	4.	filter_expenses_by_category(expenses, category):
+This function returns a filtered view of the expenses, keeping only those where the category matches the one provided by the user. It uses the filter() function along with a lambda expression that checks if the 'category' field of each expense matches the specified category. Since filter() returns an iterator, the result can be passed to print_expenses() directly without converting it to a list.
+	5.	main() function:
+This is the core loop of the program. It starts with an empty list of expenses and then continuously prompts the user with a menu:
+	•	Option 1 lets the user add a new expense by entering the amount and category.
+	•	Option 2 prints all recorded expenses using the print_expenses() function.
+	•	Option 3 displays the total of all expenses using the total_expenses() function.
+	•	Option 4 allows the user to filter expenses by category. It calls the filter_expenses_by_category() function and then displays the result using print_expenses().
+	•	Option 5 exits the program.
+
+The program demonstrates how to structure a simple application using functions, the value of lambda expressions for concise logic, and the use of map() and filter() for clean data processing.
